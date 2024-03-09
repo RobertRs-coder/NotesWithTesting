@@ -9,12 +9,8 @@ import SwiftUI
 import SwiftData
 
 struct MainView: View {
-    
     @StateObject var viewModel: NotesViewModel = .init()
-    
-    //    init() {
-    //        self._viewModel = StateObject(wrappedValue: NotesViewModel())
-    //    }
+    //    init() { self._viewModel = StateObject(wrappedValue: NotesViewModel()) }
     
     var body: some View {
         NavigationStack {
@@ -31,7 +27,6 @@ struct MainView: View {
                 }
             }
             .navigationTitle("Notes")
-            
         }
     }
 }
