@@ -11,6 +11,7 @@ import SwiftData
 struct MainView: View {
     @StateObject var viewModel: NotesViewModel = .init()
     //    init() { self._viewModel = StateObject(wrappedValue: NotesViewModel()) }
+    @State var showCreateNote: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -26,8 +27,30 @@ struct MainView: View {
                     }
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .status) {
+                    Button {
+                        showCreateNote.toggle()
+                    } label: {
+                        Label("Create Note", systemImage: "square.and.pencil")
+                            .labelStyle(.titleAndIcon)
+                    }
+                    .buttonStyle(.bordered)
+                    .tint(.blue)
+                    .bold()
+                }
+            }
+            .popover(isPresented: $showCreateNote) {
+                CreateNoteView(viewModel: viewModel)
+                    .presentationCompactAdaptation(.fullScreenCover)
+            }
+            //            .fullScreenCover(isPresented: $showCreateNote) {
+            //                CreateNoteView(viewModel: viewModel)
+            //            }
             .navigationTitle("Notes")
+
         }
+        
     }
 }
 
