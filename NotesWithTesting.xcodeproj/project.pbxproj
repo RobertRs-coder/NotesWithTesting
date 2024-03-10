@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2389E2BA2B9DC291009A0DFC /* UpdateNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2389E2B92B9DC291009A0DFC /* UpdateNoteView.swift */; };
 		23C1119D2B9C828900ACB46E /* NotesWithTestingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1119C2B9C828900ACB46E /* NotesWithTestingApp.swift */; };
 		23C1119F2B9C828900ACB46E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1119E2B9C828900ACB46E /* MainView.swift */; };
 		23C111A32B9C828A00ACB46E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23C111A22B9C828A00ACB46E /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2389E2B92B9DC291009A0DFC /* UpdateNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteView.swift; sourceTree = "<group>"; };
 		23C111992B9C828900ACB46E /* NotesWithTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesWithTesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23C1119C2B9C828900ACB46E /* NotesWithTestingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesWithTestingApp.swift; sourceTree = "<group>"; };
 		23C1119E2B9C828900ACB46E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				23C111B92B9C8CFD00ACB46E /* CreateNoteView.swift */,
+				2389E2B92B9DC291009A0DFC /* UpdateNoteView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				23C111B82B9C84CC00ACB46E /* NotesViewModel.swift in Sources */,
 				23C1119F2B9C828900ACB46E /* MainView.swift in Sources */,
 				23C1119D2B9C828900ACB46E /* NotesWithTestingApp.swift in Sources */,
+				2389E2BA2B9DC291009A0DFC /* UpdateNoteView.swift in Sources */,
 				23C111BA2B9C8CFD00ACB46E /* CreateNoteView.swift in Sources */,
 				23C111B62B9C83C900ACB46E /* Note.swift in Sources */,
 			);
@@ -364,6 +368,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -393,6 +398,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

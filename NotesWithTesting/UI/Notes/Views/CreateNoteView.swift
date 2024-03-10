@@ -13,7 +13,7 @@ struct CreateNoteView: View {
     @State var text: String = ""
     
     @Environment(\.dismiss) private var dismiss
-
+    
     var body: some View {
         NavigationStack {
             Form {
