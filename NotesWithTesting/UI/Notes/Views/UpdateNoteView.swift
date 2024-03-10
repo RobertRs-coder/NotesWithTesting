@@ -27,7 +27,7 @@ struct UpdateNoteView: View {
             Button {
                 viewModel.removeNote(id: id)
             } label: {
-                Text("Button")
+                Text("Delete Note")
                     .foregroundStyle(.gray)
                     .underline()
             }
@@ -42,7 +42,7 @@ struct UpdateNoteView: View {
                     dismiss()
                     
                 } label: {
-                    Text("Create Note")
+                    Text("Save")
                         .bold()
                 }
             }
@@ -52,5 +52,8 @@ struct UpdateNoteView: View {
 }
 
 #Preview {
-    UpdateNoteView(viewModel: .init(), id: .init(), title: "Note 1", text: "Note 1 description")
+    //To see toolbar
+    NavigationStack {
+        UpdateNoteView(viewModel: .init(), id: .init(), title: "Note 1", text: "Note 1 description")
+    }
 }

@@ -48,9 +48,10 @@ struct MainView: View {
             //                CreateNoteView(viewModel: viewModel)
             //            }
             .navigationTitle("Notes")
-
+            .navigationDestination(for: Note.self) { note in
+                UpdateNoteView(viewModel: viewModel, id: note.id, title: note.title, text: note.getText)
+            }
         }
-        
     }
 }
 
