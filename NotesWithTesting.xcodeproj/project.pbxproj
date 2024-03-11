@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		233CB9712B9F269F003AABEF /* NotesWithTestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233CB9702B9F269F003AABEF /* NotesWithTestingTests.swift */; };
+		233CB9712B9F269F003AABEF /* NotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233CB9702B9F269F003AABEF /* NotesTests.swift */; };
+		233CB9782B9F2EC0003AABEF /* NotesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233CB9772B9F2EC0003AABEF /* NotesViewModelTests.swift */; };
 		2389E2BA2B9DC291009A0DFC /* UpdateNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2389E2B92B9DC291009A0DFC /* UpdateNoteView.swift */; };
 		23C1119D2B9C828900ACB46E /* NotesWithTestingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1119C2B9C828900ACB46E /* NotesWithTestingApp.swift */; };
 		23C1119F2B9C828900ACB46E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1119E2B9C828900ACB46E /* MainView.swift */; };
@@ -30,7 +31,8 @@
 
 /* Begin PBXFileReference section */
 		233CB96E2B9F269F003AABEF /* NotesWithTestingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesWithTestingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		233CB9702B9F269F003AABEF /* NotesWithTestingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesWithTestingTests.swift; sourceTree = "<group>"; };
+		233CB9702B9F269F003AABEF /* NotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTests.swift; sourceTree = "<group>"; };
+		233CB9772B9F2EC0003AABEF /* NotesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModelTests.swift; sourceTree = "<group>"; };
 		2389E2B92B9DC291009A0DFC /* UpdateNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteView.swift; sourceTree = "<group>"; };
 		23C111992B9C828900ACB46E /* NotesWithTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesWithTesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23C1119C2B9C828900ACB46E /* NotesWithTestingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesWithTestingApp.swift; sourceTree = "<group>"; };
@@ -63,7 +65,8 @@
 		233CB96F2B9F269F003AABEF /* NotesWithTestingTests */ = {
 			isa = PBXGroup;
 			children = (
-				233CB9702B9F269F003AABEF /* NotesWithTestingTests.swift */,
+				233CB9702B9F269F003AABEF /* NotesTests.swift */,
+				233CB9772B9F2EC0003AABEF /* NotesViewModelTests.swift */,
 			);
 			path = NotesWithTestingTests;
 			sourceTree = "<group>";
@@ -281,7 +284,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				233CB9712B9F269F003AABEF /* NotesWithTestingTests.swift in Sources */,
+				233CB9782B9F2EC0003AABEF /* NotesViewModelTests.swift in Sources */,
+				233CB9712B9F269F003AABEF /* NotesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
