@@ -30,6 +30,18 @@ final class NotesWithTestingTests: XCTestCase {
         XCTAssertEqual(note.createdAt, date)
         
     }
-
+    
+    func test_Note_initWithNilText_GetText_shouldReturnEmptyString() {
+        // Given
+        let title = "Test title"
+        let date = Date()
+        
+        //When
+        let note = Note(title: title, text: nil,  createdAt: date)
+    
+        // Then
+        XCTAssertEqual(note.getText, "")
+        
+    }
 
 }
