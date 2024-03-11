@@ -25,8 +25,17 @@ struct MainView: View {
                                 .foregroundStyle(.secondary)
                         }
                     }
+                    //                    .swipeActions(edge: .trailing) {
+                    //                        Button(role: .destructive) {
+                    //                            viewModel.removeNote(id: note.id)
+                    //                        } label: {
+                    //                            Label("Delete", systemImage: "trash")
+                    //                        }
+                    //                    }
                 }
+                
             }
+            
             .toolbar {
                 ToolbarItem(placement: .status) {
                     Button {
@@ -44,12 +53,14 @@ struct MainView: View {
                 CreateNoteView(viewModel: viewModel)
                     .presentationCompactAdaptation(.fullScreenCover)
             }
-            //            .fullScreenCover(isPresented: $showCreateNote) {
-            //                CreateNoteView(viewModel: viewModel)
-            //            }
             .navigationTitle("Notes")
             .navigationDestination(for: Note.self) { note in
-                UpdateNoteView(viewModel: viewModel, id: note.id, title: note.title, text: note.getText)
+                UpdateNoteView(
+                    viewModel: viewModel,
+                    id: note.id,
+                    title: note.title,
+                    text: note.getText
+                )
             }
         }
     }

@@ -26,6 +26,7 @@ struct UpdateNoteView: View {
             }
             Button {
                 viewModel.removeNote(id: id)
+                dismiss()
             } label: {
                 Text("Delete Note")
                     .foregroundStyle(.gray)
