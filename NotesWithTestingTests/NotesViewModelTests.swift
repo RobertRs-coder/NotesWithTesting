@@ -64,14 +64,14 @@ final class NotesViewModelTests: XCTestCase {
     
     func test_NotesViewModel_updateNote_shouldUpdateNote() {
         // Given
-        let title = "Test title "
-        let text = "Test text "
+        let title = "Test title"
+        let text = "Test text"
         
         viewModel?.createNote(title: title, text: text)
         
         // When
-        let titleUpdated = "Test title updated "
-        let textUpdated = "Test text updated "
+        let titleUpdated = "Test title updated"
+        let textUpdated = "Test text updated"
         
         guard let id = viewModel?.notes.first?.id else { 
             XCTFail("No note be created")
@@ -86,8 +86,8 @@ final class NotesViewModelTests: XCTestCase {
     
     func test_NotesViewModel_removeNote_shouldRemoveNote() {
         // Given
-        let title = "Test title "
-        let text = "Test text "
+        let title = "Test title"
+        let text = "Test text"
         
         viewModel?.createNote(title: title, text: text)
         
