@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		233CB9712B9F269F003AABEF /* NotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233CB9702B9F269F003AABEF /* NotesTests.swift */; };
 		233CB9782B9F2EC0003AABEF /* NotesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233CB9772B9F2EC0003AABEF /* NotesViewModelTests.swift */; };
+		238492772BA1CA4C00F3770D /* CreateNoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238492762BA1CA4C00F3770D /* CreateNoteUseCase.swift */; };
+		238492792BA1CDE500F3770D /* FetchAllNotesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238492782BA1CDE500F3770D /* FetchAllNotesUseCase.swift */; };
 		2389E2BA2B9DC291009A0DFC /* UpdateNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2389E2B92B9DC291009A0DFC /* UpdateNoteView.swift */; };
 		23C1119D2B9C828900ACB46E /* NotesWithTestingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1119C2B9C828900ACB46E /* NotesWithTestingApp.swift */; };
 		23C1119F2B9C828900ACB46E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1119E2B9C828900ACB46E /* MainView.swift */; };
@@ -35,6 +37,8 @@
 		233CB96E2B9F269F003AABEF /* NotesWithTestingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesWithTestingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		233CB9702B9F269F003AABEF /* NotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTests.swift; sourceTree = "<group>"; };
 		233CB9772B9F2EC0003AABEF /* NotesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModelTests.swift; sourceTree = "<group>"; };
+		238492762BA1CA4C00F3770D /* CreateNoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteUseCase.swift; sourceTree = "<group>"; };
+		238492782BA1CDE500F3770D /* FetchAllNotesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllNotesUseCase.swift; sourceTree = "<group>"; };
 		2389E2B92B9DC291009A0DFC /* UpdateNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteView.swift; sourceTree = "<group>"; };
 		23C111992B9C828900ACB46E /* NotesWithTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesWithTesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23C1119C2B9C828900ACB46E /* NotesWithTestingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesWithTestingApp.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 		234AE5D12B9F5E1A00AC02C3 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				238492762BA1CA4C00F3770D /* CreateNoteUseCase.swift */,
+				238492782BA1CDE500F3770D /* FetchAllNotesUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -308,6 +314,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				23C111B82B9C84CC00ACB46E /* NotesViewModel.swift in Sources */,
+				238492772BA1CA4C00F3770D /* CreateNoteUseCase.swift in Sources */,
+				238492792BA1CDE500F3770D /* FetchAllNotesUseCase.swift in Sources */,
 				23E2E7712BA1C1B6001A18BA /* NotesDatabase.swift in Sources */,
 				23C1119F2B9C828900ACB46E /* MainView.swift in Sources */,
 				23C1119D2B9C828900ACB46E /* NotesWithTestingApp.swift in Sources */,
