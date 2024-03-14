@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct CreateNoteUseCase {
+protocol CreateNoteProtocol {
+    func createNote(title: String, text: String) throws
+}
+
+struct CreateNoteUseCase: CreateNoteProtocol {
     var notesDatabase: NotesDatabaseProtocol
     
     init(notesDatabase: NotesDatabaseProtocol = NotesDatabase.shared) {
@@ -19,7 +23,6 @@ struct CreateNoteUseCase {
         
         try notesDatabase.insert(note: NoteDAO(identifier: note.id,title: note.title, text: note.text, createdAt: note.createdAt))
     }
-    
 }
 
 

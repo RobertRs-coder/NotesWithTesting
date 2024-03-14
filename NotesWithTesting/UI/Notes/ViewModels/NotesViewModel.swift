@@ -10,8 +10,8 @@ import Foundation
 
 final class NotesViewModel: ObservableObject {
     @Published var notes: [Note]
-    var createNoteUseCase: CreateNoteUseCase
-    var fetchAllNotesUseCase: FetchAllNotesUseCase
+    var createNoteUseCase: CreateNoteProtocol
+    var fetchAllNotesUseCase: FetchAllNotesProtocol
     
 //    init(notes: [Note] = []) {
 //        self.notes = notes
@@ -19,8 +19,8 @@ final class NotesViewModel: ObservableObject {
     
     init(
         notes: [Note] = [],
-        createNoteUseCase: CreateNoteUseCase = CreateNoteUseCase(),
-        fetchAllNotesUSeCase: FetchAllNotesUseCase = FetchAllNotesUseCase()
+        createNoteUseCase: CreateNoteProtocol = CreateNoteUseCase(),
+        fetchAllNotesUSeCase: FetchAllNotesProtocol = FetchAllNotesUseCase()
     ) {
         self.notes = notes
         self.createNoteUseCase = createNoteUseCase

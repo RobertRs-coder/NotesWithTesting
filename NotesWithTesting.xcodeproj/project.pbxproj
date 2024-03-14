@@ -22,6 +22,8 @@
 		23C111BA2B9C8CFD00ACB46E /* CreateNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C111B92B9C8CFD00ACB46E /* CreateNoteView.swift */; };
 		23E2E7712BA1C1B6001A18BA /* NotesDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E2E7702BA1C1B6001A18BA /* NotesDatabase.swift */; };
 		23E2E7732BA1C3A3001A18BA /* NotesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E2E7722BA1C3A3001A18BA /* NotesDAO.swift */; };
+		23F52C452BA35DFF0021D953 /* CreateNoteUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F52C442BA35DFF0021D953 /* CreateNoteUseCaseMock.swift */; };
+		23F52C472BA35E4F0021D953 /* FetchAllNotesUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F52C462BA35E4F0021D953 /* FetchAllNotesUseCaseMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		23C111B92B9C8CFD00ACB46E /* CreateNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteView.swift; sourceTree = "<group>"; };
 		23E2E7702BA1C1B6001A18BA /* NotesDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesDatabase.swift; sourceTree = "<group>"; };
 		23E2E7722BA1C3A3001A18BA /* NotesDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesDAO.swift; sourceTree = "<group>"; };
+		23F52C442BA35DFF0021D953 /* CreateNoteUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteUseCaseMock.swift; sourceTree = "<group>"; };
+		23F52C462BA35E4F0021D953 /* FetchAllNotesUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllNotesUseCaseMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 		233CB96F2B9F269F003AABEF /* NotesWithTestingTests */ = {
 			isa = PBXGroup;
 			children = (
+				23F52C432BA35C590021D953 /* Mocks */,
 				233CB9702B9F269F003AABEF /* NotesTests.swift */,
 				233CB9772B9F2EC0003AABEF /* NotesViewModelTests.swift */,
 				238456CE2BA1F0E500609CB4 /* NotesViewModelIntegrationTests.swift */,
@@ -207,6 +212,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		23F52C432BA35C590021D953 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				23F52C442BA35DFF0021D953 /* CreateNoteUseCaseMock.swift */,
+				23F52C462BA35E4F0021D953 /* FetchAllNotesUseCaseMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -309,7 +323,9 @@
 			files = (
 				238456CF2BA1F0E500609CB4 /* NotesViewModelIntegrationTests.swift in Sources */,
 				233CB9782B9F2EC0003AABEF /* NotesViewModelTests.swift in Sources */,
+				23F52C472BA35E4F0021D953 /* FetchAllNotesUseCaseMock.swift in Sources */,
 				233CB9712B9F269F003AABEF /* NotesTests.swift in Sources */,
+				23F52C452BA35DFF0021D953 /* CreateNoteUseCaseMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
