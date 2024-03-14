@@ -15,7 +15,7 @@ struct FetchAllNotesUseCase {
         self.notesDatabase = notesDatabase
     }
     
-    func fetchAll() async throws -> [Note] {
-        try await notesDatabase.fetchAll().map { Note(title: $0.title, text: $0.text, createdAt: $0.createdAt) }
+    func fetchAll() throws -> [Note] {
+        try notesDatabase.fetchAll().map { Note(title: $0.title, text: $0.text, createdAt: $0.createdAt) }
     }
 }

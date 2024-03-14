@@ -34,7 +34,7 @@ struct CreateNoteView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        viewModel.createNote(title: title, text: text)
+                            viewModel.createNote(title: title, text: text)
                         dismiss()
                         
                     } label: {
@@ -50,5 +50,5 @@ struct CreateNoteView: View {
 }
 
 #Preview {
-    CreateNoteView(viewModel: .init())
+    CreateNoteView(viewModel: .init(notes: []))
 }

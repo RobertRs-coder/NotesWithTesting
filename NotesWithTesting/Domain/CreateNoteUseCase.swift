@@ -14,10 +14,10 @@ struct CreateNoteUseCase {
         self.notesDatabase = notesDatabase
     }
     
-    func createNote(title: String, text: String) async throws {
+    func createNote(title: String, text: String) throws {
         let note: Note = .init(id: .init(),title: title, text: text, createdAt: .now)
         
-        try await notesDatabase.insert(note: NoteDAO(identifier: note.id,title: note.title, text: note.text, createdAt: note.createdAt))
+        try notesDatabase.insert(note: NoteDAO(identifier: note.id,title: note.title, text: note.text, createdAt: note.createdAt))
     }
     
 }

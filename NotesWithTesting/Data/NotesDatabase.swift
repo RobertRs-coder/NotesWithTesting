@@ -12,22 +12,23 @@ enum DatabaseError: Error {
     case insertError(error: String)
     case fetchError(error: String)
     case updateError(error: String)
-    case removeErrorçccc (error: String)
+    case removeError (error: String)
 }
 
 protocol NotesDatabaseProtocol {
-    func insert(note: NoteDAO) async throws
-    func fetchAll() async throws -> [NoteDAO]
+    func insert(note: NoteDAO) throws
+    func fetchAll() throws -> [NoteDAO]
 }
 
-@MainActor
 class NotesDatabase: NotesDatabaseProtocol {
     static let shared: NotesDatabase = NotesDatabase()
     
+    @MainActor
     var container: ModelContainer = setupContainer(inMemory: false)
     
     private init() { }
     
+    @MainActor
     static func setupContainer(inMemory: Bool) -> ModelContainer {
         do {
             let container = try ModelContainer(
@@ -41,7 +42,7 @@ class NotesDatabase: NotesDatabaseProtocol {
             fatalError("Database can't be created")
         }
     }
-    
+    @MainActor 
     func insert(note: NoteDAO) throws {
         container.mainContext.insert(note)
         
@@ -52,7 +53,7 @@ class NotesDatabase: NotesDatabaseProtocol {
         }
        
     }
-    
+    @MainActor 
     func fetchAll() throws -> [NoteDAO] {
         let fetchDescriptor = FetchDescriptor<NoteDAO>(sortBy: [SortDescriptor<NoteDAO>(\.createdAt)])
         
@@ -60,6 +61,25 @@ class NotesDatabase: NotesDatabaseProtocol {
             return try container.mainContext.fetch(fetchDescriptor)
         } catch {
             throw DatabaseError.fetchError(error: error.localizedDescription)
+        }
+    }
+    
+    @MainActor
+    func update(note: NoteDAO) throws  {
+        let fetchDescriptor = FetchDescriptor<NoteDAO>(sortBy: [SortDescriptor<NoteDAO>(\.identifier)])
+        do {
+            try container.mainContext.save()
+        } catch {
+            throw DatabaseError.removeError(error: error.localizedDescription)
+        }
+    }
+    
+    @MainActor
+    func removeAll() throws  {
+        do {
+            try container.mainContext.delete(model: NoteDAO.self)
+        } catch {
+            throw DatabaseError.removeError(error: error.localizedDescription)
         }
     }
 }

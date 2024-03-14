@@ -25,13 +25,6 @@ struct MainView: View {
                                 .foregroundStyle(.secondary)
                         }
                     }
-                    //                    .swipeActions(edge: .trailing) {
-                    //                        Button(role: .destructive) {
-                    //                            viewModel.removeNote(id: note.id)
-                    //                        } label: {
-                    //                            Label("Delete", systemImage: "trash")
-                    //                        }
-                    //                    }
                 }
                 
             }
