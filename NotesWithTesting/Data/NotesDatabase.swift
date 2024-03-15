@@ -8,7 +8,7 @@
 import Foundation
 import SwiftData
 
-enum DatabaseError: Error {
+enum DatabaseError: Error, LocalizedError{
     case insertError(error: String)
     case fetchError(error: String)
     case updateError(error: String)
@@ -18,6 +18,8 @@ enum DatabaseError: Error {
 protocol NotesDatabaseProtocol {
     func insert(note: NoteDAO) throws
     func fetchAll() throws -> [NoteDAO]
+    func update(note: NoteDAO) throws
+    func remove(note: NoteDAO) throws
 }
 
 class NotesDatabase: NotesDatabaseProtocol {
@@ -66,13 +68,50 @@ class NotesDatabase: NotesDatabaseProtocol {
     
     @MainActor
     func update(note: NoteDAO) throws  {
-        let fetchDescriptor = FetchDescriptor<NoteDAO>(sortBy: [SortDescriptor<NoteDAO>(\.identifier)])
+        let notePredicate = #Predicate<NoteDAO>{
+            $0.identifier == note.identifier
+        }
+        
+        var fetchDescriptor = FetchDescriptor<NoteDAO>(predicate: notePredicate)
+        fetchDescriptor.fetchLimit = 1
+        
         do {
+            guard let updatedNote = try container.mainContext.fetch(fetchDescriptor).first else {
+                
+                throw DatabaseError.updateError(error: "Error")
+            }
+
+            updatedNote.title = note.title
+            updatedNote.text = note.text
+            
+            try container.mainContext.save()
+        } catch {
+            throw DatabaseError.updateError(error: error.localizedDescription)
+        }
+    }
+    
+    @MainActor
+    func remove(note: NoteDAO) throws  {
+        let notePredicate = #Predicate<NoteDAO>{
+            $0.identifier == note.identifier
+        }
+        
+        var fetchDescriptor = FetchDescriptor<NoteDAO>(predicate: notePredicate)
+        fetchDescriptor.fetchLimit = 1
+        
+        do {
+            guard let deletedNote = try container.mainContext.fetch(fetchDescriptor).first else {
+                
+                throw DatabaseError.removeError(error: "Error")
+            }
+
+            container.mainContext.delete(deletedNote)
             try container.mainContext.save()
         } catch {
             throw DatabaseError.removeError(error: error.localizedDescription)
         }
     }
+
     
     @MainActor
     func removeAll() throws  {

@@ -24,6 +24,7 @@
 		23E2E7732BA1C3A3001A18BA /* NotesDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E2E7722BA1C3A3001A18BA /* NotesDAO.swift */; };
 		23F52C452BA35DFF0021D953 /* CreateNoteUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F52C442BA35DFF0021D953 /* CreateNoteUseCaseMock.swift */; };
 		23F52C472BA35E4F0021D953 /* FetchAllNotesUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F52C462BA35E4F0021D953 /* FetchAllNotesUseCaseMock.swift */; };
+		23F52C492BA360FA0021D953 /* UpdateNoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F52C482BA360FA0021D953 /* UpdateNoteUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		23E2E7722BA1C3A3001A18BA /* NotesDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesDAO.swift; sourceTree = "<group>"; };
 		23F52C442BA35DFF0021D953 /* CreateNoteUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteUseCaseMock.swift; sourceTree = "<group>"; };
 		23F52C462BA35E4F0021D953 /* FetchAllNotesUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllNotesUseCaseMock.swift; sourceTree = "<group>"; };
+		23F52C482BA360FA0021D953 /* UpdateNoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				238492762BA1CA4C00F3770D /* CreateNoteUseCase.swift */,
 				238492782BA1CDE500F3770D /* FetchAllNotesUseCase.swift */,
+				23F52C482BA360FA0021D953 /* UpdateNoteUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				23C1119F2B9C828900ACB46E /* MainView.swift in Sources */,
 				23C1119D2B9C828900ACB46E /* NotesWithTestingApp.swift in Sources */,
 				2389E2BA2B9DC291009A0DFC /* UpdateNoteView.swift in Sources */,
+				23F52C492BA360FA0021D953 /* UpdateNoteUseCase.swift in Sources */,
 				23C111BA2B9C8CFD00ACB46E /* CreateNoteView.swift in Sources */,
 				23E2E7732BA1C3A3001A18BA /* NotesDAO.swift in Sources */,
 				23C111B62B9C83C900ACB46E /* Note.swift in Sources */,
