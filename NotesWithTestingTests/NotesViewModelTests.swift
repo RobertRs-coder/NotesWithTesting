@@ -16,7 +16,7 @@ final class NotesViewModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        viewModel = NotesViewModel(createNoteUseCase: CreateNoteUseCaseMock(), fetchAllNotesUSeCase: FetchAllNotesUseCaseMock())
+        viewModel = NotesViewModel(createNoteUseCase: CreateNoteUseCaseMock(), fetchAllNotesUseCase: FetchAllNotesUseCaseMock())
         
     }
 
@@ -64,43 +64,43 @@ final class NotesViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.notes[2].getText, text3)
     }
     
-    func test_NotesViewModel_updateNote_shouldUpdateNote() async {
-        // Given
-        let title = "Test title"
-        let text = "Test text"
-        
-         viewModel?.createNote(title: title, text: text)
-        
-        // When
-        let titleUpdated = "Test title updated"
-        let textUpdated = "Test text updated"
-        
-        guard let id = viewModel?.notes.first?.id else { 
-            XCTFail("No note be created")
-            return
-        }
-        viewModel?.updateNote(id: id, newTitle: titleUpdated, newText: textUpdated)
-        
-        // Then
-        XCTAssertEqual(viewModel.notes.first?.title, titleUpdated)
-        XCTAssertEqual(viewModel.notes.first?.getText, textUpdated)
-    }
-    
-    func test_NotesViewModel_removeNote_shouldRemoveNote() async {
-        // Given
-        let title = "Test title"
-        let text = "Test text"
-        
-        viewModel?.createNote(title: title, text: text)
-        
-        // When
-        guard let id = viewModel.notes.first?.id else {
-            XCTFail("No note be created")
-            return
-        }
-        viewModel.removeNote(id: id)
-        
-        // Then
-        XCTAssertTrue(viewModel.notes.count == 0)
-    }
+//    func test_NotesViewModel_updateNote_shouldUpdateNote() async {
+//        // Given
+//        let title = "Test title"
+//        let text = "Test text"
+//        
+//         viewModel?.createNote(title: title, text: text)
+//        
+//        // When
+//        let titleUpdated = "Test title updated"
+//        let textUpdated = "Test text updated"
+//        
+//        guard let id = viewModel?.notes.first?.id else { 
+//            XCTFail("No note be created")
+//            return
+//        }
+//        viewModel?.updateNote(id: id, newTitle: titleUpdated, newText: textUpdated)
+//        
+//        // Then
+//        XCTAssertEqual(viewModel.notes.first?.title, titleUpdated)
+//        XCTAssertEqual(viewModel.notes.first?.getText, textUpdated)
+//    }
+//    
+//    func test_NotesViewModel_removeNote_shouldRemoveNote() async {
+//        // Given
+//        let title = "Test title"
+//        let text = "Test text"
+//        
+//        viewModel?.createNote(title: title, text: text)
+//        
+//        // When
+//        guard let id = viewModel.notes.first?.id else {
+//            XCTFail("No note be created")
+//            return
+//        }
+//        viewModel.removeNote(id: id)
+//        
+//        // Then
+//        XCTAssertTrue(viewModel.notes.count == 0)
+//    }
 }

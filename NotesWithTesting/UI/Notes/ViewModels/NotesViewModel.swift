@@ -12,31 +12,29 @@ final class NotesViewModel: ObservableObject {
     @Published var notes: [Note]
     var createNoteUseCase: CreateNoteProtocol
     var fetchAllNotesUseCase: FetchAllNotesProtocol
-    
-//    init(notes: [Note] = []) {
-//        self.notes = notes
-//    }
-    
+    var updateNoteUseCase: UpdateNoteProtocol
+    var removeNoteUseCase: RemoveNoteProtocol
+    var removeAllNotesUseCase: RemoveAllNotesProtocol
+
     init(
         notes: [Note] = [],
         createNoteUseCase: CreateNoteProtocol = CreateNoteUseCase(),
-        fetchAllNotesUSeCase: FetchAllNotesProtocol = FetchAllNotesUseCase()
+        fetchAllNotesUseCase: FetchAllNotesProtocol = FetchAllNotesUseCase(),
+        updateNoteUseCase: UpdateNoteProtocol = UpdateNoteUseCase(),
+        removeNoteUseCase: RemoveNoteProtocol = RemoveNoteUseCase(),
+        removeAllNotesUseCase: RemoveAllNotesProtocol = RemoveAllNotesUseCase()
     ) {
         self.notes = notes
         self.createNoteUseCase = createNoteUseCase
-        self.fetchAllNotesUseCase = fetchAllNotesUSeCase
+        self.fetchAllNotesUseCase = fetchAllNotesUseCase
+        self.updateNoteUseCase = updateNoteUseCase
+        self.removeNoteUseCase = removeNoteUseCase
+        self.removeAllNotesUseCase = removeAllNotesUseCase
         
         fetchAllNotes()
-//        Task {
-//            await fetchAllNotes()
-//        }
     }
-//
+
     func createNote(title: String, text: String)  {
-        //        let note: Note = .init(title: title, text: text, createdAt: .now)
-        //
-        //        notes.append(note)
-        
         do {
             try createNoteUseCase.createNote(title: title, text: text)
             fetchAllNotes()
@@ -45,24 +43,45 @@ final class NotesViewModel: ObservableObject {
         }
     }
     func fetchAllNotes()  {
-            do {
-
-                notes = try fetchAllNotesUseCase.fetchAll()
-            } catch {
-                print(error.localizedDescription)
-            }
+        do {
+            
+            notes = try fetchAllNotesUseCase.fetchAll()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
-    func updateNote(id: UUID, newTitle: String, newText: String?) {
-        
-        if let index = notes.firstIndex(where: { $0.id == id }) {
-            let updatedNote = Note(id: id, title: newTitle, text: newText, createdAt: .now)
-            notes[index] = updatedNote
+    func updateNote(id: UUID, newTitle: String, newText: String) {
+        do {
+            try updateNoteUseCase.updateNote(id: id, title: newTitle, text: newText)
+            fetchAllNotes()
+
+            
+        } catch {
+            print(error.localizedDescription)
         }
     }
     
     func removeNote(id: UUID) {
-        notes.removeAll(where: { $0.id == id })
+        do {
+            try removeNoteUseCase.removeNote(id: id)
+            fetchAllNotes()
+
+            
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func removeAllNotes() {
+        do {
+            try removeAllNotesUseCase.removeAllNotes()
+            fetchAllNotes()
+
+            
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
- 
+

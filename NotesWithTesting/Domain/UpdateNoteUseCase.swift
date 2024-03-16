@@ -8,7 +8,7 @@
 import Foundation
 
 protocol UpdateNoteProtocol {
-    func updateNote(id: UUID, title: String, text: String?) throws
+    func updateNote(id: UUID, title: String, text: String) throws
 }
 
 struct UpdateNoteUseCase: UpdateNoteProtocol {
@@ -18,7 +18,7 @@ struct UpdateNoteUseCase: UpdateNoteProtocol {
         self.notesDatabase = notesDatabase
     }
     
-    func updateNote(id: UUID, title: String, text: String?) throws {
-        try notesDatabase.update(note: NoteDAO(identifier: id,title: title, text: text, createdAt: .now))
+    func updateNote(id: UUID, title: String, text: String) throws {
+        try notesDatabase.update(identifier: id, title: title, text: text)
     }
 }

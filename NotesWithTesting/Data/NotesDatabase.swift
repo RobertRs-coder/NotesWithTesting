@@ -18,8 +18,9 @@ enum DatabaseError: Error, LocalizedError{
 protocol NotesDatabaseProtocol {
     func insert(note: NoteDAO) throws
     func fetchAll() throws -> [NoteDAO]
-    func update(note: NoteDAO) throws
-    func remove(note: NoteDAO) throws
+    func update(identifier: UUID, title: String, text: String) throws
+    func remove(identifier: UUID) throws
+    func removeAll() throws
 }
 
 class NotesDatabase: NotesDatabaseProtocol {
@@ -67,9 +68,9 @@ class NotesDatabase: NotesDatabaseProtocol {
     }
     
     @MainActor
-    func update(note: NoteDAO) throws  {
+    func update(identifier: UUID, title: String, text: String) throws  {
         let notePredicate = #Predicate<NoteDAO>{
-            $0.identifier == note.identifier
+            $0.identifier == identifier
         }
         
         var fetchDescriptor = FetchDescriptor<NoteDAO>(predicate: notePredicate)
@@ -81,8 +82,8 @@ class NotesDatabase: NotesDatabaseProtocol {
                 throw DatabaseError.updateError(error: "Error")
             }
 
-            updatedNote.title = note.title
-            updatedNote.text = note.text
+            updatedNote.title = title
+            updatedNote.text = text
             
             try container.mainContext.save()
         } catch {
@@ -91,9 +92,9 @@ class NotesDatabase: NotesDatabaseProtocol {
     }
     
     @MainActor
-    func remove(note: NoteDAO) throws  {
-        let notePredicate = #Predicate<NoteDAO>{
-            $0.identifier == note.identifier
+    func remove(identifier: UUID) throws  {
+        let notePredicate = #Predicate<NoteDAO> {
+            $0.identifier == identifier
         }
         
         var fetchDescriptor = FetchDescriptor<NoteDAO>(predicate: notePredicate)
@@ -102,7 +103,7 @@ class NotesDatabase: NotesDatabaseProtocol {
         do {
             guard let deletedNote = try container.mainContext.fetch(fetchDescriptor).first else {
                 
-                throw DatabaseError.removeError(error: "Error")
+                throw DatabaseError.removeError(error: "Errorssssssssss")
             }
 
             container.mainContext.delete(deletedNote)

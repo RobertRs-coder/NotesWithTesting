@@ -21,7 +21,7 @@ final class NotesViewModelIntegrationTests: XCTestCase {
         let createNoteUseCase = CreateNoteUseCase(notesDatabase: database)
         let fetchAllNotesUseCase = FetchAllNotesUseCase(notesDatabase: database)
         
-        sut = NotesViewModel(createNoteUseCase: createNoteUseCase, fetchAllNotesUSeCase: fetchAllNotesUseCase)
+        sut = NotesViewModel(createNoteUseCase: createNoteUseCase, fetchAllNotesUseCase: fetchAllNotesUseCase)
     }
 
     override func tearDownWithError() throws {
