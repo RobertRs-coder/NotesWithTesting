@@ -10,11 +10,11 @@ import Foundation
 
 final class NotesViewModel: ObservableObject {
     @Published var notes: [Note]
-    var createNoteUseCase: CreateNoteProtocol
-    var fetchAllNotesUseCase: FetchAllNotesProtocol
-    var updateNoteUseCase: UpdateNoteProtocol
-    var removeNoteUseCase: RemoveNoteProtocol
-    var removeAllNotesUseCase: RemoveAllNotesProtocol
+    private let createNoteUseCase: CreateNoteProtocol
+    private let fetchAllNotesUseCase: FetchAllNotesProtocol
+    private let updateNoteUseCase: UpdateNoteProtocol
+    private let removeNoteUseCase: RemoveNoteProtocol
+    private let removeAllNotesUseCase: RemoveAllNotesProtocol
 
     init(
         notes: [Note] = [],

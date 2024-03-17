@@ -8,10 +8,11 @@
 import XCTest
 @testable import NotesWithTesting
 
-@MainActor
+//@MainActor
 final class NotesViewModelIntegrationTests: XCTestCase {
     var sut: NotesViewModel!
     
+    @MainActor
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         let database = NotesDatabase.shared
@@ -37,6 +38,7 @@ final class NotesViewModelIntegrationTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
+    @MainActor
     func test_NotesViewModel_createNote_ShoulReturnSuccess() {
         // Given
         sut.createNote(title: "Title note 1", text: "Text note 1")
@@ -50,7 +52,7 @@ final class NotesViewModelIntegrationTests: XCTestCase {
         XCTAssertEqual(sut.notes.count, 1)
         
     }
-    
+    @MainActor
     func test_NotesViewModel_createTwoNote_ShoulReturnSuccess() {
         // Given
         sut.createNote(title: "Title note 1", text: "Text note 1")
@@ -67,7 +69,7 @@ final class NotesViewModelIntegrationTests: XCTestCase {
         XCTAssertEqual(lastNote?.title, "Title note 2")
         XCTAssertEqual(lastNote?.getText, "Text note 2")
     }
-    
+    @MainActor
     func test_NotesViewModel_updateNote_ShoulReturnSuccess() {
         
         // Given
@@ -91,6 +93,7 @@ final class NotesViewModelIntegrationTests: XCTestCase {
         XCTAssertEqual(sut.notes.first?.getText, textUpdated)
     }
     
+    @MainActor
     func test_NotesViewModel_removeNote_shouldRemoveNote() async {
         // Given
         let title = "Test title"
@@ -109,6 +112,7 @@ final class NotesViewModelIntegrationTests: XCTestCase {
         XCTAssertTrue(sut.notes.count == 0)
     }
     
+    @MainActor
     func test_NotesViewModel_removeNote_shouldRemoveAllNotes() async {
         // Given
         let title1 = "Test title 1"
