@@ -1,5 +1,5 @@
 //
-//  NotesDAO.swift
+//  NoteDAO.swift
 //  NotesWithTesting
 //
 //  Created by Roberto Rojo Sahuquillo on 13/3/24.
@@ -15,12 +15,8 @@ class NoteDAO: Identifiable, Hashable {
     var title: String
     var text: String?
     var createdAt: Date
-    
-    var getText: String {
-        text ?? ""
-    }
-    
-    init(identifier: UUID = UUID(), title: String, text: String?, createdAt: Date) {
+
+    init(identifier: UUID, title: String, text: String?, createdAt: Date) {
         self.identifier = identifier
         self.title = title
         self.text = text

@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 protocol RemoveNoteProtocol {
     func removeNote(id: UUID) throws
 }

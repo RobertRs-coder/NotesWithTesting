@@ -8,21 +8,6 @@
 import Foundation
 import SwiftData
 
-enum DatabaseError: Error, LocalizedError{
-    case insertError(error: String)
-    case fetchError(error: String)
-    case updateError(error: String)
-    case removeError (error: String)
-}
-
-protocol NotesDatabaseProtocol {
-    func insert(note: NoteDAO) throws
-    func fetchAll() throws -> [NoteDAO]
-    func update(identifier: UUID, title: String, text: String) throws
-    func remove(identifier: UUID) throws
-    func removeAll() throws
-}
-
 class NotesDatabase: NotesDatabaseProtocol {
     static let shared: NotesDatabase = NotesDatabase()
     
@@ -79,7 +64,7 @@ class NotesDatabase: NotesDatabaseProtocol {
         do {
             guard let updatedNote = try container.mainContext.fetch(fetchDescriptor).first else {
                 
-                throw DatabaseError.updateError(error: "Error")
+                throw DatabaseError.updateError(error: "Error: The note doesn't exist")
             }
 
             updatedNote.title = title
@@ -103,7 +88,7 @@ class NotesDatabase: NotesDatabaseProtocol {
         do {
             guard let deletedNote = try container.mainContext.fetch(fetchDescriptor).first else {
                 
-                throw DatabaseError.removeError(error: "Errorssssssssss")
+                throw DatabaseError.removeError(error: "Error: The note doesn't exist")
             }
 
             container.mainContext.delete(deletedNote)

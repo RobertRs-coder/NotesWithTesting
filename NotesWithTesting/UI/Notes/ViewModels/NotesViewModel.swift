@@ -38,16 +38,19 @@ final class NotesViewModel: ObservableObject {
         do {
             try createNoteUseCase.createNote(title: title, text: text)
             fetchAllNotes()
+            
         } catch {
             print(error.localizedDescription)
+            
         }
     }
     func fetchAllNotes()  {
         do {
-            
             notes = try fetchAllNotesUseCase.fetchAll()
+            
         } catch {
             print(error.localizedDescription)
+            
         }
     }
     
@@ -55,7 +58,6 @@ final class NotesViewModel: ObservableObject {
         do {
             try updateNoteUseCase.updateNote(id: id, title: newTitle, text: newText)
             fetchAllNotes()
-
             
         } catch {
             print(error.localizedDescription)
@@ -66,10 +68,10 @@ final class NotesViewModel: ObservableObject {
         do {
             try removeNoteUseCase.removeNote(id: id)
             fetchAllNotes()
-
             
         } catch {
             print(error.localizedDescription)
+            
         }
     }
     
@@ -77,10 +79,9 @@ final class NotesViewModel: ObservableObject {
         do {
             try removeAllNotesUseCase.removeAllNotes()
             fetchAllNotes()
-
-            
         } catch {
             print(error.localizedDescription)
+            
         }
     }
 }
