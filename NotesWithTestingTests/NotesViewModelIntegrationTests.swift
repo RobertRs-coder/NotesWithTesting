@@ -154,7 +154,7 @@ final class NotesViewModelIntegrationTests: XCTestCase {
     }
     
     @MainActor
-    func test_NotesViewModel_removeNote_shouldRemoveAllNotes() {
+    func test_NotesViewModel_removeAllNotes_shouldRemoveAllNotes() {
         // Given
         let title1 = "Test title 1"
         let text1 = "Test text 1"
