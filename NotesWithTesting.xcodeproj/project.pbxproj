@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		233CB9712B9F269F003AABEF /* NotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233CB9702B9F269F003AABEF /* NotesTests.swift */; };
 		233CB9782B9F2EC0003AABEF /* NotesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233CB9772B9F2EC0003AABEF /* NotesViewModelTests.swift */; };
-		235020732BA5C3AE00FDC8E8 /* UpdateNoteUSeCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235020722BA5C3AE00FDC8E8 /* UpdateNoteUSeCaseMock.swift */; };
+		235020732BA5C3AE00FDC8E8 /* UpdateNoteUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235020722BA5C3AE00FDC8E8 /* UpdateNoteUseCaseMock.swift */; };
 		235020752BA5C66200FDC8E8 /* RemoveNoteUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235020742BA5C66200FDC8E8 /* RemoveNoteUseCaseMock.swift */; };
 		235020772BA5C7E000FDC8E8 /* RemoveAllNotesUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235020762BA5C7E000FDC8E8 /* RemoveAllNotesUseCaseMock.swift */; };
 		2363661F2BA4465100B43FBB /* RemoveNoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2363661E2BA4465100B43FBB /* RemoveNoteUseCase.swift */; };
@@ -49,7 +49,7 @@
 		233CB96E2B9F269F003AABEF /* NotesWithTestingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesWithTestingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		233CB9702B9F269F003AABEF /* NotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTests.swift; sourceTree = "<group>"; };
 		233CB9772B9F2EC0003AABEF /* NotesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModelTests.swift; sourceTree = "<group>"; };
-		235020722BA5C3AE00FDC8E8 /* UpdateNoteUSeCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteUSeCaseMock.swift; sourceTree = "<group>"; };
+		235020722BA5C3AE00FDC8E8 /* UpdateNoteUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteUseCaseMock.swift; sourceTree = "<group>"; };
 		235020742BA5C66200FDC8E8 /* RemoveNoteUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveNoteUseCaseMock.swift; sourceTree = "<group>"; };
 		235020762BA5C7E000FDC8E8 /* RemoveAllNotesUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAllNotesUseCaseMock.swift; sourceTree = "<group>"; };
 		2363661E2BA4465100B43FBB /* RemoveNoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveNoteUseCase.swift; sourceTree = "<group>"; };
@@ -265,7 +265,7 @@
 			children = (
 				23F52C442BA35DFF0021D953 /* CreateNoteUseCaseMock.swift */,
 				23F52C462BA35E4F0021D953 /* FetchAllNotesUseCaseMock.swift */,
-				235020722BA5C3AE00FDC8E8 /* UpdateNoteUSeCaseMock.swift */,
+				235020722BA5C3AE00FDC8E8 /* UpdateNoteUseCaseMock.swift */,
 				235020742BA5C66200FDC8E8 /* RemoveNoteUseCaseMock.swift */,
 				235020762BA5C7E000FDC8E8 /* RemoveAllNotesUseCaseMock.swift */,
 			);
@@ -375,7 +375,7 @@
 				238456CF2BA1F0E500609CB4 /* NotesViewModelIntegrationTests.swift in Sources */,
 				235020752BA5C66200FDC8E8 /* RemoveNoteUseCaseMock.swift in Sources */,
 				233CB9782B9F2EC0003AABEF /* NotesViewModelTests.swift in Sources */,
-				235020732BA5C3AE00FDC8E8 /* UpdateNoteUSeCaseMock.swift in Sources */,
+				235020732BA5C3AE00FDC8E8 /* UpdateNoteUseCaseMock.swift in Sources */,
 				23F52C472BA35E4F0021D953 /* FetchAllNotesUseCaseMock.swift in Sources */,
 				235020772BA5C7E000FDC8E8 /* RemoveAllNotesUseCaseMock.swift in Sources */,
 				233CB9712B9F269F003AABEF /* NotesTests.swift in Sources */,

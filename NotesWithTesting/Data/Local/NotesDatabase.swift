@@ -37,7 +37,7 @@ class NotesDatabase: NotesDatabaseProtocol {
         do {
             try container.mainContext.save()
         } catch {
-            throw DatabaseError.insertError(error: "Error: \(error.localizedDescription)")
+            throw DatabaseError.insertError
         }
        
     }
@@ -48,7 +48,7 @@ class NotesDatabase: NotesDatabaseProtocol {
         do {
             return try container.mainContext.fetch(fetchDescriptor)
         } catch {
-            throw DatabaseError.fetchError(error: error.localizedDescription)
+            throw DatabaseError.fetchError
         }
     }
     
@@ -64,7 +64,7 @@ class NotesDatabase: NotesDatabaseProtocol {
         do {
             guard let updatedNote = try container.mainContext.fetch(fetchDescriptor).first else {
                 
-                throw DatabaseError.updateError(error: "Error: The note doesn't exist")
+                throw DatabaseError.updateError
             }
 
             updatedNote.title = title
@@ -72,7 +72,7 @@ class NotesDatabase: NotesDatabaseProtocol {
             
             try container.mainContext.save()
         } catch {
-            throw DatabaseError.updateError(error: error.localizedDescription)
+            throw DatabaseError.updateError
         }
     }
     
@@ -88,13 +88,13 @@ class NotesDatabase: NotesDatabaseProtocol {
         do {
             guard let deletedNote = try container.mainContext.fetch(fetchDescriptor).first else {
                 
-                throw DatabaseError.removeError(error: "Error: The note doesn't exist")
+                throw DatabaseError.removeError
             }
 
             container.mainContext.delete(deletedNote)
             try container.mainContext.save()
         } catch {
-            throw DatabaseError.removeError(error: error.localizedDescription)
+            throw DatabaseError.removeError
         }
     }
 
@@ -104,7 +104,7 @@ class NotesDatabase: NotesDatabaseProtocol {
         do {
             try container.mainContext.delete(model: NoteDAO.self)
         } catch {
-            throw DatabaseError.removeError(error: error.localizedDescription)
+            throw DatabaseError.removeError
         }
     }
 }

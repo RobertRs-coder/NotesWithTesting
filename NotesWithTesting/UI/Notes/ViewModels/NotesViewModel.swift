@@ -10,6 +10,7 @@ import Foundation
 
 final class NotesViewModel: ObservableObject {
     @Published var notes: [Note]
+    @Published var databaseError: DatabaseError?
     private let createNoteUseCase: CreateNoteProtocol
     private let fetchAllNotesUseCase: FetchAllNotesProtocol
     private let updateNoteUseCase: UpdateNoteProtocol
@@ -38,7 +39,9 @@ final class NotesViewModel: ObservableObject {
         do {
             try createNoteUseCase.createNote(title: title, text: text)
             fetchAllNotes()
-            
+        } catch let error as DatabaseError {
+            print(error.localizedDescription)
+            databaseError = error
         } catch {
             print(error.localizedDescription)
             
@@ -47,7 +50,9 @@ final class NotesViewModel: ObservableObject {
     func fetchAllNotes()  {
         do {
             notes = try fetchAllNotesUseCase.fetchAll()
-            
+        } catch let error as DatabaseError {
+            print(error.localizedDescription)
+            databaseError = error
         } catch {
             print(error.localizedDescription)
             
@@ -58,7 +63,9 @@ final class NotesViewModel: ObservableObject {
         do {
             try updateNoteUseCase.updateNote(id: id, title: newTitle, text: newText)
             fetchAllNotes()
-            
+        } catch let error as DatabaseError {
+            print(error.localizedDescription)
+            databaseError = error
         } catch {
             print(error.localizedDescription)
         }
@@ -69,7 +76,10 @@ final class NotesViewModel: ObservableObject {
             try removeNoteUseCase.removeNote(id: id)
             fetchAllNotes()
             
-        } catch {
+        } catch let error as DatabaseError {
+            print(error.localizedDescription)
+            databaseError = error
+        }catch {
             print(error.localizedDescription)
             
         }
@@ -79,6 +89,9 @@ final class NotesViewModel: ObservableObject {
         do {
             try removeAllNotesUseCase.removeAllNotes()
             fetchAllNotes()
+        } catch let error as DatabaseError {
+            print(error.localizedDescription)
+            databaseError = error
         } catch {
             print(error.localizedDescription)
             

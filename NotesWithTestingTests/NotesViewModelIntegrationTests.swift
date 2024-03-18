@@ -7,6 +7,9 @@
 
 import XCTest
 @testable import NotesWithTesting
+// Naming Structure: test_UnitOfWork_StateUnderTest_ExpectedBehavior
+// Naming Structure: test_[struct or class]_[variable or function]_[expected result]
+// Testing structure: Given, When, Then || Arrange, Act, Assert
 
 //@MainActor
 final class NotesViewModelIntegrationTests: XCTestCase {
@@ -69,6 +72,19 @@ final class NotesViewModelIntegrationTests: XCTestCase {
         XCTAssertEqual(lastNote?.title, "Title note 2")
         XCTAssertEqual(lastNote?.getText, "Text note 2")
     }
+    
+    
+//    func test_NotesViewModel_createNote_shouldThrowError() {
+//       // Given
+//        
+//        // When
+//        sut.createNote(title: nil, text: "")
+//        
+//        // Then
+//        XCTAssertEqual(sut.notes.count, 0)
+//        XCTAssertNotNil(sut.databaseError)
+//        XCTAssertEqual(sut.databaseError, DatabaseError.insertError)
+    
     @MainActor
     func test_NotesViewModel_updateNote_ShoulReturnSuccess() {
         
@@ -93,8 +109,20 @@ final class NotesViewModelIntegrationTests: XCTestCase {
         XCTAssertEqual(sut.notes.first?.getText, textUpdated)
     }
     
+    func test_NotesViewModel_updateNote_shouldThrowError() {
+        // Given
+
+        // When
+        sut.updateNote(id: UUID(), newTitle: "", newText: "")
+        
+        // Then
+        XCTAssertEqual(sut.notes.count, 0)
+        XCTAssertNotNil(sut.databaseError)
+        XCTAssertEqual(sut.databaseError, DatabaseError.updateError)
+    }
+    
     @MainActor
-    func test_NotesViewModel_removeNote_shouldRemoveNote() async {
+    func test_NotesViewModel_removeNote_shouldRemoveNote() {
         // Given
         let title = "Test title"
         let text = "Test text"
@@ -113,7 +141,20 @@ final class NotesViewModelIntegrationTests: XCTestCase {
     }
     
     @MainActor
-    func test_NotesViewModel_removeNote_shouldRemoveAllNotes() async {
+    func test_NotesViewModel_removeNote_shouldThrowError() {
+       // Given
+        
+        // When
+        sut.removeNote(id: UUID())
+        
+        // Then
+        XCTAssertEqual(sut.notes.count, 0)
+        XCTAssertNotNil(sut.databaseError)
+        XCTAssertEqual(sut.databaseError, DatabaseError.removeError)
+    }
+    
+    @MainActor
+    func test_NotesViewModel_removeNote_shouldRemoveAllNotes() {
         // Given
         let title1 = "Test title 1"
         let text1 = "Test text 1"

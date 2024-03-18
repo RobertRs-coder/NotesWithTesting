@@ -12,7 +12,10 @@ struct RemoveNoteUseCaseMock: RemoveNoteProtocol {
     
     func removeNote(id: UUID) throws {
         
-        mockDatabase.removeAll(where: { $0.id == id })
+//        mockDatabase.removeAll(where: { $0.id == id })
+        if let index = mockDatabase.firstIndex(where: { $0.id == id }) {
+            mockDatabase.remove(at: index)
+        }
    
     }
 }
