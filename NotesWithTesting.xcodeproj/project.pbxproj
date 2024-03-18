@@ -14,6 +14,11 @@
 		235020772BA5C7E000FDC8E8 /* RemoveAllNotesUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235020762BA5C7E000FDC8E8 /* RemoveAllNotesUseCaseMock.swift */; };
 		2363661F2BA4465100B43FBB /* RemoveNoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2363661E2BA4465100B43FBB /* RemoveNoteUseCase.swift */; };
 		236366212BA4469F00B43FBB /* RemoveAllNotesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236366202BA4469F00B43FBB /* RemoveAllNotesUseCase.swift */; };
+		23681A0A2BA85C5A00A90524 /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 23681A092BA85C5A00A90524 /* InlineSnapshotTesting */; };
+		23681A0C2BA85C5A00A90524 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 23681A0B2BA85C5A00A90524 /* SnapshotTesting */; };
+		23681A0E2BA85C6A00A90524 /* CreateNoteViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23681A0D2BA85C6A00A90524 /* CreateNoteViewSnapshotTests.swift */; };
+		23681A132BA863C900A90524 /* UpadateNoteViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23681A122BA863C900A90524 /* UpadateNoteViewSnapshotTests.swift */; };
+		23681A152BA863DC00A90524 /* MainViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23681A142BA863DC00A90524 /* MainViewSnapshotTests.swift */; };
 		238456CF2BA1F0E500609CB4 /* NotesViewModelIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238456CE2BA1F0E500609CB4 /* NotesViewModelIntegrationTests.swift */; };
 		238492772BA1CA4C00F3770D /* CreateNoteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238492762BA1CA4C00F3770D /* CreateNoteUseCase.swift */; };
 		238492792BA1CDE500F3770D /* FetchAllNotesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238492782BA1CDE500F3770D /* FetchAllNotesUseCase.swift */; };
@@ -54,6 +59,9 @@
 		235020762BA5C7E000FDC8E8 /* RemoveAllNotesUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAllNotesUseCaseMock.swift; sourceTree = "<group>"; };
 		2363661E2BA4465100B43FBB /* RemoveNoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveNoteUseCase.swift; sourceTree = "<group>"; };
 		236366202BA4469F00B43FBB /* RemoveAllNotesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAllNotesUseCase.swift; sourceTree = "<group>"; };
+		23681A0D2BA85C6A00A90524 /* CreateNoteViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewSnapshotTests.swift; sourceTree = "<group>"; };
+		23681A122BA863C900A90524 /* UpadateNoteViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpadateNoteViewSnapshotTests.swift; sourceTree = "<group>"; };
+		23681A142BA863DC00A90524 /* MainViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewSnapshotTests.swift; sourceTree = "<group>"; };
 		238456CE2BA1F0E500609CB4 /* NotesViewModelIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModelIntegrationTests.swift; sourceTree = "<group>"; };
 		238492762BA1CA4C00F3770D /* CreateNoteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteUseCase.swift; sourceTree = "<group>"; };
 		238492782BA1CDE500F3770D /* FetchAllNotesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllNotesUseCase.swift; sourceTree = "<group>"; };
@@ -81,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23681A0A2BA85C5A00A90524 /* InlineSnapshotTesting in Frameworks */,
+				23681A0C2BA85C5A00A90524 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,10 +107,9 @@
 		233CB96F2B9F269F003AABEF /* NotesWithTestingTests */ = {
 			isa = PBXGroup;
 			children = (
-				23F52C432BA35C590021D953 /* Mocks */,
-				233CB9702B9F269F003AABEF /* NotesTests.swift */,
-				233CB9772B9F2EC0003AABEF /* NotesViewModelTests.swift */,
-				238456CE2BA1F0E500609CB4 /* NotesViewModelIntegrationTests.swift */,
+				23681A0F2BA8635200A90524 /* UnitTests */,
+				23681A102BA8636300A90524 /* IntegrationTests */,
+				23681A112BA8638000A90524 /* SnapshotTests */,
 			);
 			path = NotesWithTestingTests;
 			sourceTree = "<group>";
@@ -112,6 +121,34 @@
 				23E1A96F2BA6738E0062B0DE /* UseCases */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		23681A0F2BA8635200A90524 /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				23F52C432BA35C590021D953 /* Mocks */,
+				233CB9702B9F269F003AABEF /* NotesTests.swift */,
+				233CB9772B9F2EC0003AABEF /* NotesViewModelTests.swift */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		23681A102BA8636300A90524 /* IntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				238456CE2BA1F0E500609CB4 /* NotesViewModelIntegrationTests.swift */,
+			);
+			path = IntegrationTests;
+			sourceTree = "<group>";
+		};
+		23681A112BA8638000A90524 /* SnapshotTests */ = {
+			isa = PBXGroup;
+			children = (
+				23681A142BA863DC00A90524 /* MainViewSnapshotTests.swift */,
+				23681A0D2BA85C6A00A90524 /* CreateNoteViewSnapshotTests.swift */,
+				23681A122BA863C900A90524 /* UpadateNoteViewSnapshotTests.swift */,
+			);
+			path = SnapshotTests;
 			sourceTree = "<group>";
 		};
 		23C111902B9C828900ACB46E = {
@@ -289,6 +326,10 @@
 				233CB9732B9F269F003AABEF /* PBXTargetDependency */,
 			);
 			name = NotesWithTestingTests;
+			packageProductDependencies = (
+				23681A092BA85C5A00A90524 /* InlineSnapshotTesting */,
+				23681A0B2BA85C5A00A90524 /* SnapshotTesting */,
+			);
 			productName = NotesWithTestingTests;
 			productReference = 233CB96E2B9F269F003AABEF /* NotesWithTestingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -338,6 +379,9 @@
 				Base,
 			);
 			mainGroup = 23C111902B9C828900ACB46E;
+			packageReferences = (
+				23681A082BA85C5A00A90524 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			productRefGroup = 23C1119A2B9C828900ACB46E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -373,7 +417,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				238456CF2BA1F0E500609CB4 /* NotesViewModelIntegrationTests.swift in Sources */,
+				23681A0E2BA85C6A00A90524 /* CreateNoteViewSnapshotTests.swift in Sources */,
 				235020752BA5C66200FDC8E8 /* RemoveNoteUseCaseMock.swift in Sources */,
+				23681A132BA863C900A90524 /* UpadateNoteViewSnapshotTests.swift in Sources */,
+				23681A152BA863DC00A90524 /* MainViewSnapshotTests.swift in Sources */,
 				233CB9782B9F2EC0003AABEF /* NotesViewModelTests.swift in Sources */,
 				235020732BA5C3AE00FDC8E8 /* UpdateNoteUseCaseMock.swift in Sources */,
 				23F52C472BA35E4F0021D953 /* FetchAllNotesUseCaseMock.swift in Sources */,
@@ -663,6 +710,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		23681A082BA85C5A00A90524 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.15.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		23681A092BA85C5A00A90524 /* InlineSnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23681A082BA85C5A00A90524 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = InlineSnapshotTesting;
+		};
+		23681A0B2BA85C5A00A90524 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23681A082BA85C5A00A90524 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 23C111912B9C828900ACB46E /* Project object */;
 }
