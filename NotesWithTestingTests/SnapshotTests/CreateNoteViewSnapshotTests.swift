@@ -13,7 +13,7 @@ import SnapshotTesting
 final class CreateNoteViewSnapshotTests: XCTestCase {
     
     func test_CreateNoteView_emptyInit_shouldBeSuccessful() throws {
-        // Given
+    // Given
         let createNoteView = CreateNoteView(viewModel: .init())
         
         // When

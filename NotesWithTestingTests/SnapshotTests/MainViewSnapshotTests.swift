@@ -13,7 +13,7 @@ final class MainViewSnapshotTests: XCTestCase {
 
     func test_MainView_emptyInit_shouldBeSuccessful() throws {
         // Given
-        let mainView = MainView(viewModel: NotesViewModel())
+        let mainView = MainView(showCreateNote: false)
         
         // When
         
