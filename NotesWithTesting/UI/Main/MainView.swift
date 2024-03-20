@@ -37,6 +37,7 @@ struct MainView: View {
                         Label("Create Note", systemImage: "square.and.pencil")
                             .labelStyle(.titleAndIcon)
                     }
+                    .accessibilityIdentifier("CreateNoteViewButton")
                     .buttonStyle(.bordered)
                     .tint(.blue)
                     .bold()

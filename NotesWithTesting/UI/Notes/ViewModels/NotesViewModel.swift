@@ -81,7 +81,6 @@ final class NotesViewModel: ObservableObject {
             databaseError = error
         }catch {
             print(error.localizedDescription)
-            
         }
     }
     
@@ -94,7 +93,6 @@ final class NotesViewModel: ObservableObject {
             databaseError = error
         } catch {
             print(error.localizedDescription)
-            
         }
     }
 }

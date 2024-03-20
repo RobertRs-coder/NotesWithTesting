@@ -47,6 +47,7 @@ struct UpdateNoteView: View {
                     Text("Save")
                         .bold()
                 }
+                .accessibilityIdentifier("UpdateNoteButton")
             }
         }
         .navigationTitle("Modify Note")

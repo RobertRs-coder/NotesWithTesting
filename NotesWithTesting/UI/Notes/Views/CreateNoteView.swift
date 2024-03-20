@@ -43,6 +43,7 @@ struct CreateNoteView: View {
                         Text("Create Note")
                             .bold()
                     }
+                    .accessibilityIdentifier("CreateNoteButton")
                 }
             }
             .navigationTitle("New Note")
