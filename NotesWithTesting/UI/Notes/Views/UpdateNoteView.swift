@@ -33,6 +33,7 @@ struct UpdateNoteView: View {
                     .underline()
             }
             .buttonStyle(.borderless)
+            .accessibilityIdentifier("DeleteNoteButton")
             Spacer()
         }
         .background(Color(.systemBackground))

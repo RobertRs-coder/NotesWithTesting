@@ -24,7 +24,6 @@
 		238492792BA1CDE500F3770D /* FetchAllNotesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238492782BA1CDE500F3770D /* FetchAllNotesUseCase.swift */; };
 		2389E2BA2B9DC291009A0DFC /* UpdateNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2389E2B92B9DC291009A0DFC /* UpdateNoteView.swift */; };
 		23A5E7DB2BA9E391005EA39C /* NotesWithTestingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A5E7DA2BA9E391005EA39C /* NotesWithTestingUITests.swift */; };
-		23A5E7DD2BA9E391005EA39C /* NotesWithTestingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A5E7DC2BA9E391005EA39C /* NotesWithTestingUITestsLaunchTests.swift */; };
 		23C1119D2B9C828900ACB46E /* NotesWithTestingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1119C2B9C828900ACB46E /* NotesWithTestingApp.swift */; };
 		23C1119F2B9C828900ACB46E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C1119E2B9C828900ACB46E /* MainView.swift */; };
 		23C111A32B9C828A00ACB46E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23C111A22B9C828A00ACB46E /* Assets.xcassets */; };
@@ -77,7 +76,6 @@
 		2389E2B92B9DC291009A0DFC /* UpdateNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNoteView.swift; sourceTree = "<group>"; };
 		23A5E7D82BA9E391005EA39C /* NotesWithTestingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesWithTestingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23A5E7DA2BA9E391005EA39C /* NotesWithTestingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesWithTestingUITests.swift; sourceTree = "<group>"; };
-		23A5E7DC2BA9E391005EA39C /* NotesWithTestingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesWithTestingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		23C111992B9C828900ACB46E /* NotesWithTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotesWithTesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23C1119C2B9C828900ACB46E /* NotesWithTestingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesWithTestingApp.swift; sourceTree = "<group>"; };
 		23C1119E2B9C828900ACB46E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				23A5E7DA2BA9E391005EA39C /* NotesWithTestingUITests.swift */,
-				23A5E7DC2BA9E391005EA39C /* NotesWithTestingUITestsLaunchTests.swift */,
 			);
 			path = NotesWithTestingUITests;
 			sourceTree = "<group>";
@@ -495,7 +492,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				23A5E7DB2BA9E391005EA39C /* NotesWithTestingUITests.swift in Sources */,
-				23A5E7DD2BA9E391005EA39C /* NotesWithTestingUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
