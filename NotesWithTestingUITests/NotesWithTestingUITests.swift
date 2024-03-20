@@ -14,7 +14,6 @@ import XCTest
 final class NotesWithTestingUITests: XCTestCase {
     
     func test_CreateNoteView_createNote_shouldBeSuccessfull() throws {
-        // UI tests must launch the application that they test.
         
         let app = XCUIApplication()
         app.launch()
@@ -44,7 +43,7 @@ final class NotesWithTestingUITests: XCTestCase {
     }
     
     func test_CreateNoteView_removeNote_shouldBeSuccessfull() throws {
-        // UI tests must launch the application that they test.
+        
         let app = XCUIApplication()
         app.launch()
 
